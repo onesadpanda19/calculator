@@ -1,0 +1,23 @@
+#calculator {
+    display: flex;
+    height: 500px;
+    width : 300px;
+    justify-content: center;
+}
+
+button {
+    height: 50px;
+    width: 50px;
+}
+
+#display {
+    height: 30px;
+    width: 300px;
+    border: solid;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
