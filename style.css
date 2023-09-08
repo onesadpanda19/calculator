@@ -3,6 +3,7 @@
     height: 500px;
     width : 300px;
     justify-content: center;
+    align-items: flex-start;
 }
 
 button {
@@ -12,12 +13,32 @@ button {
 
 #display {
     height: 30px;
-    width: 300px;
+    width: 295px;
     border: solid;
 }
 
-.controls {
+#controls {
     display: flex;
     justify-content: center;
-    align-self: center;
+    flex-wrap: wrap;
+}
+
+#controls button {
+    flex: 1 1 33%;
+}
+
+
+ #operators {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+ }
+#master-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1 {
+    display: flex;
+   justify-content: center;
 }
