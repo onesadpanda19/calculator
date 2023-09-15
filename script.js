@@ -1,4 +1,7 @@
-let content = ""
+let content = [""]
+let math = ['']
+let solution = ['']
+
 
 
 function add (a, b) {
@@ -31,10 +34,10 @@ function addDigit (e) {
     content.textContent = currentButton;
 
     // gitDisplay.removeChild
-    
+
     // Setting text of display
     console.log(currentButton);
-    console.log(getDisplay)    
+    console.log(getDisplay);  
     
     // doing math
     }
