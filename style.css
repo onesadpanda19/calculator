@@ -15,6 +15,7 @@ button {
     height: 60px;
     width: 295px;
     border: solid;
+    display: flex;
 }
 
 #controls {
