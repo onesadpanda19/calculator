@@ -1,13 +1,32 @@
 let values = []
 let math = []
 let solution = []
+let firstNum = ""
+let ops = ["+", "-", "/", "*"]
+let secondNum = ""
+let op = ""
 
 //create operate function
 const operator = (num1, op, num2) => {
-    if (op === '+') {add (num1, num2)}
-    else if (op === "-") {subtract (num1, num2)}
-    else if (op === "*") {multiply (num1, num2)}
-    else if (op === "/") {divide (num1, num2)}
+    // Parse strings into nums (parseInt) 
+    num1 = parseInt(num1)
+    num2 = parseInt(num2)
+    if (op === '+') {
+      solution = add(num1, num2)
+    }
+    else if (op === "-") {
+        solution = subtract (num1, num2)
+    }
+    else if (op === "*") {
+        solution = multiply (num1, num2)
+    }
+    else if (op === "/") { 
+        solution = divide (num1, num2)
+    }
+    console.log (num1)
+    console.log (num2)
+    console.log(solution)
+    return solution
 }
 
 const clearButton = document.querySelector(".clear")
@@ -17,6 +36,33 @@ function clear(e) {
     values = [];
     let display = document.querySelector("#display")
     display.innerHTML = ''
+}
+
+const equalButton = document.querySelector(".equals")
+equalButton.addEventListener("click", (e) => equals(e))
+//  - - -  -  -  *
+// [1,3,4,'.',2,'-',1,2]
+function equals(e) {
+    values.forEach((value) => {
+    if (ops.includes(value)) {
+       op = value
+    }
+    else { 
+        if (op !== "") {
+        secondNum = secondNum.concat (value) 
+    }
+        else {
+        firstNum = firstNum.concat (value)
+           }  
+    }
+
+   
+    }) 
+console.log(firstNum)
+console.log(op)
+console.log(secondNum)
+    // After loop
+operator(firstNum, op, secondNum)
 }
 
 function add (a, b) {
@@ -43,6 +89,9 @@ function addDigit (e) {
     // Setting up clicked button and display
     const currentButton = e.target.classList.value;
     if (currentButton === "clear") {
+        return
+    }
+    if (currentButton === "equals") {
         return
     }
     const getDisplay = document.querySelector("#display");
