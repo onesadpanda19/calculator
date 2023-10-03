@@ -5,7 +5,7 @@ let firstNum = ""
 let ops = ["+", "-", "/", "*"]
 let secondNum = ""
 let op = ""
-
+let display = document.querySelector("#display")
 //create operate function
 const operator = (num1, op, num2) => {
     // Parse strings into nums (parseInt) 
@@ -23,12 +23,21 @@ const operator = (num1, op, num2) => {
     else if (op === "/") { 
         solution = divide (num1, num2)
     }
+    // Adding solution number to display
     const getSolution = document.querySelector("#solution");
     const content = document.createElement('div')
-    getSolution.appendChild(content)
+    let oldSolution = document.querySelector('.solution')
+    if (oldSolution) {
+        getSolution.removeChild(oldSolution)  
+    }
     content.classList.add('solution')
+    getSolution.appendChild(content)
     content.textContent = solution;
-
+    // Clearing content
+    let clearMath = document.querySelectorAll('.content')
+    clearMath.forEach((content) => {
+        display.removeChild(content)
+    })
 
     console.log (num1)
     console.log (num2)
@@ -47,7 +56,6 @@ clearButton.addEventListener("click", (e) => clear(e))
 
 function clear(e) {
     values = [];
-    let display = document.querySelector("#display") // Parent of content
     let clearSolution = document.querySelector("#solution"); // Parent of solution
     let contentList = document.querySelectorAll('.content') // List of content
     let solutionList = document.querySelectorAll(".solution") // List of solutions
@@ -88,10 +96,12 @@ console.log(op)
 console.log(secondNum)
     // After loop
 operator(firstNum, op, secondNum)
+op = ''
 
 values = [];
 secondNum = ''
 firstNum = `${solution}`
+
  // Cleanup
 }
 
@@ -124,6 +134,8 @@ function addDigit (e) {
     if (currentButton === "equals") {
         return
     }
+    
+
     const getDisplay = document.querySelector("#display");
     const content = document.createElement('div')
     getDisplay.appendChild(content)

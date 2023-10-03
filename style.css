@@ -34,6 +34,10 @@ button {
     align-items: center;
     flex-direction: column;
  }
+
+ #operators button {
+    background-color: crimson;
+ }
  
 #master-container {
     display: flex;
@@ -43,4 +47,9 @@ button {
 h1 {
     display: flex;
    justify-content: center;
+}
+
+
+.equals {
+    background-color: cyan;
 }
