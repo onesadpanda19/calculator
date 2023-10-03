@@ -162,3 +162,4 @@ function addDigit (e) {
     console.log(values)
     // doing math
     }
+// find a way to add multiple operations in one go
