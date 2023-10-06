@@ -16,6 +16,7 @@ button {
     width: 295px;
     border: solid;
     display: flex;
+    background-color: beige;
 }
 
 #controls {
@@ -52,4 +53,8 @@ h1 {
 
 .equals {
     background-color: cyan;
+}
+
+html {
+    background-color: darkgrey;
 }

@@ -33,11 +33,13 @@ const operator = (num1, op, num2) => {
     content.classList.add('solution')
     getSolution.appendChild(content)
     content.textContent = solution;
-    // Clearing content
+    
+    // Clearing content   
     let clearMath = document.querySelectorAll('.content')
     clearMath.forEach((content) => {
         display.removeChild(content)
     })
+
 
     console.log (num1)
     console.log (num2)
@@ -134,7 +136,8 @@ function addDigit (e) {
     if (currentButton === "equals") {
         return
     }
-    
+   
+        
 
     const getDisplay = document.querySelector("#display");
     const content = document.createElement('div')
@@ -142,7 +145,12 @@ function addDigit (e) {
     content.classList.add('content');
     content.textContent = currentButton;
     
-    
+    if (ops.includes(currentButton)) {
+        console.log("hi")
+        getDisplay == ops
+        equals()
+    }   
+    // fix if statement to only go off after ops is pressed twice
 
     // Array of the button values and operator
     values.push(currentButton)
