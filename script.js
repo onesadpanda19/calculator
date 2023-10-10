@@ -136,7 +136,7 @@ function addDigit (e) {
     if (currentButton === "equals") {
         return
     }
-   
+    
         
 
     const getDisplay = document.querySelector("#display");
@@ -144,12 +144,35 @@ function addDigit (e) {
     getDisplay.appendChild(content)
     content.classList.add('content');
     content.textContent = currentButton;
-    
+    /*
+    If there is already an operator clicked and they click another one
+    calculate our current values 
+    */
+
+    /* if(values.some((value) => {
+ 	return ops.includes(value); //false, false, true, false 
+})) {
+  console.log("there is an op in values!!!!")
+}*/
+
+    // Only go into this if, if what they press is an op
     if (ops.includes(currentButton)) {
-        console.log("hi")
-        getDisplay == ops
-        equals()
-    }   
+        // If the last button they press was an op
+        let lastButton = values.slice(-1);
+        if (ops.includes(lastButton)){
+            console.log("i messed up")
+        return
+    }
+        
+        // If they have an op in values already
+        if (values.some(value => {
+            return ops.includes(value)
+        })){
+            equals()
+             console.log('hi')}
+}
+    
+
     // fix if statement to only go off after ops is pressed twice
 
     // Array of the button values and operator
